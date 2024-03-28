@@ -1,5 +1,14 @@
 import image from "./vivek.png"
+import { getAllCustomers } from "../Server/Customers/CustomerService"
+import { useNavigate } from 'react-router-dom';
+
 export const CardComp =()=>{
+
+    const navigate = useNavigate();
+    function handleGetAllCustomers(){
+        navigate('/getCustomer');
+    }
+
     return(
         <div className = 'card-container'>
             <div className = 'card'>
@@ -8,6 +17,9 @@ export const CardComp =()=>{
              <h3 className = 'cardtitle' >Vivek card</h3>
              <p className = 'cardtext'>Hello this is vivek</p>
              </div>
+             
+             <button className='btn btn-primary mb-2' onClick= {()=>handleGetAllCustomers()}> View all Customers</button>
+             
         </div>
     )
 }
